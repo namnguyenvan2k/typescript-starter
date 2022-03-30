@@ -5,9 +5,10 @@ import { CatsModule } from './Cat/cat.module';
 import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from './Guard';
 import { HttpExceptionFilter } from './helper/exception.filter';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [CatsModule],
+  imports: [CatsModule, MongooseModule.forRoot('mongodb://localhost:27017')],
   providers: [
     {
       provide: APP_FILTER,
