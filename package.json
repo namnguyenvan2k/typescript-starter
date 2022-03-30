@@ -17,13 +17,17 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "test:e2e:watch": "jest --config ./test/jest-e2e.json --watch"
   },
   "dependencies": {
     "@nestjs/common": "^8.1.1",
     "@nestjs/core": "^8.1.1",
+    "@nestjs/mongoose": "^9.0.3",
     "@nestjs/platform-express": "^8.1.1",
     "joi": "^17.6.0",
+    "mongodb": "^4.4.1",
+    "mongoose": "^6.2.9",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.4.0"
@@ -67,6 +71,10 @@
       "**/*.(t|j)s"
     ],
     "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
   }
 }
